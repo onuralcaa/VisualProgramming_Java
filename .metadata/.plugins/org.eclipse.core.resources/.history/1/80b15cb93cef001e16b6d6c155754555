@@ -14,7 +14,7 @@ public class deneme {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-	
+		
 		JFrame jf = new JFrame();
 		
 		jf.setTitle("First");
@@ -55,24 +55,11 @@ public class deneme {
 				// TODO Auto-generated method stub
 				
 				JOptionPane panel = new JOptionPane();
-				panel.showMessageDialog(null, "Hello, this is a new window.");
+				panel.showMessageDialog(null, "Hello this is a new window.");
 				
 			}
 		});
 		
-		JButton btn3 = new JButton("Get name");
-		btn3.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				String isim = JOptionPane.showInputDialog("Please enter name : ");
-				
-				JOptionPane.showMessageDialog(null, isim);
-			}
-		});
-		
-		jf.getContentPane().add(btn3);
 		jf.getContentPane().add(btn2);
 		
 		jf.setResizable(false); //pencere ölçeklendirme açık/kapalı
