@@ -36,7 +36,7 @@ public class deneme {
 		Color oldcolor = btn1.getBackground();
 		
 		JLabel lbl1 = new JLabel();
-		
+		lbl1.setSize(200, 200);
 		jf.getContentPane().add(lbl1);
 		
 		Image img1 = new ImageIcon(deneme.class.getResource("/image/lblimage.png")).getImage();
@@ -78,11 +78,6 @@ public class deneme {
 				
 			}
 		});
-		
-		
-		
-		
-		
 		
 		
 		
