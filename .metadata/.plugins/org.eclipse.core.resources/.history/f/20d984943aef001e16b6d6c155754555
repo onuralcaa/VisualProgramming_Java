@@ -1,0 +1,42 @@
+package _001_firstProgram;
+
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+public class deneme {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		JFrame jf = new JFrame();
+		
+		jf.setTitle("First");
+		
+		jf.setSize(500,600);
+		
+		jf.setLocation(100, 200);
+		
+		jf.getContentPane().setLayout(new FlowLayout()); //container added.
+		
+		JTextField txt1 = new JTextField(20);
+		JButton btn1 = new JButton("Share");
+		JLabel jlbl1 = new JLabel();
+		jlbl1.setText("Lütfen isminizi giriniz :");
+		
+		jf.getContentPane().add(jlbl1);
+		jf.getContentPane().add(txt1);
+		jf.getContentPane().add(btn1);
+		
+		
+		
+		jf.setVisible(true);
+		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+	}
+
+}
