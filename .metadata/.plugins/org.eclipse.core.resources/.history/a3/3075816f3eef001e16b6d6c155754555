@@ -36,7 +36,7 @@ public class deneme {
 		}
 	
 		
-		String sfinal1 = JOptionPane.showInputDialog("Please enter your final score");
+		String sfinal1 = JOptionPane.showInputDialog("Please enter your homework score");
 		final1 = Integer.parseInt(sfinal1);
 		
 		while(final1 < 0 || final1 > 100)
@@ -44,14 +44,6 @@ public class deneme {
 			sfinal1 = JOptionPane.showInputDialog(null, "Please enter your final score", "final score ", JOptionPane.WARNING_MESSAGE);
 			final1 = Integer.parseInt(sfinal1);
 		}
-		
-		double notOrt = vize*0.4 + odev*0.1 + final1*0.5;
-		String sonuc = "";
-		
-		if(notOrt > 50) sonuc = notOrt + " Passed.";
-		else sonuc = notOrt + " Fail.";
-		
-		JOptionPane.showMessageDialog(null, sonuc);
 		
 		
 		

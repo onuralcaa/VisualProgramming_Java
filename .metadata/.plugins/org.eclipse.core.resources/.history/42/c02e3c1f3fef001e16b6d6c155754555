@@ -48,8 +48,8 @@ public class deneme {
 		double notOrt = vize*0.4 + odev*0.1 + final1*0.5;
 		String sonuc = "";
 		
-		if(notOrt > 50) sonuc = notOrt + " Passed.";
-		else sonuc = notOrt + " Fail.";
+		if(notOrt > 50) sonuc = notOrt + "Passed.";
+		else sonuc = notOrt + "Fail.";
 		
 		JOptionPane.showMessageDialog(null, sonuc);
 		
