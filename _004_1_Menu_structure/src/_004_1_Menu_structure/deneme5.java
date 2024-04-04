@@ -1,4 +1,4 @@
-package _003_1_Tables_and_Menus;
+package _004_1_Menu_structure;
 
 
 import java.awt.Color;
@@ -33,7 +33,7 @@ public class deneme5 {
 		JMenu menu = new JMenu("File");
 		JMenu submenu = new JMenu("New");
 		
-		//menu ekleme
+		//menu
 		JMenuItem i2 = new JMenuItem("Open File");
 		JMenuItem i3 = new JMenuItem("Recent Files");
 		JMenuItem i4 = new JMenuItem("Close Editor");
@@ -42,10 +42,11 @@ public class deneme5 {
 		JMenuItem a1 = new JMenuItem("Java Project");
 		JMenuItem a2 = new JMenuItem("Maven Project");
 		
+		//alt menuleri ekleme
 		submenu.add(a1);
 		submenu.add(a2);
 		
-
+		//menuleri ekleme
 		menu.add(i2);
 		menu.add(i3);
 		menu.add(i4);
@@ -56,6 +57,7 @@ public class deneme5 {
 		jf.setJMenuBar(mb); //son aşama
 	
 		
+		//Menu tıklama fonksiyonu
 		i2.addActionListener(new ActionListener() {
 			
 			@Override
