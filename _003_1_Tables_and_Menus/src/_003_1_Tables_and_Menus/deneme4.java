@@ -31,16 +31,15 @@ public class deneme4 {
 				
 		};
 		
-		String [][] headers = { 
-				{"Numara", "İsim", "Memleket"}, 
-		}; 
+		String []headers = { "Numara", "İsim", "Memleket" }; 
 		
 		JTable table = new JTable(data, headers);
+		
 		JScrollPane sp = new JScrollPane(table);
 		jf.add(sp);
 		
 		
-		jf.setLayout(null);
+		jf.setLayout(new FlowLayout());
 		
 		jf.setVisible(true);
 		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
