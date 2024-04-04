@@ -74,7 +74,15 @@ public class deneme6 {
 			}
 		});
 
-
+		cut.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+				JOptionPane.showMessageDialog(jf, "Cut function selected.");
+			}
+		});
 		
 		
 		
