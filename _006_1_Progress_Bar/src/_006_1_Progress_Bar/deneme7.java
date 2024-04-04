@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -39,26 +38,29 @@ public class deneme7 {
 		
 		jf.add(pb);
 		
+		jf.setLayout(new FlowLayout());
+		jf.setVisible(true);
+		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
 		int i = 0;
 		
 		while(i <= 2000) //bitiş noktasına kadar
 		{
 			pb.setValue(i);
-			i = i +  20;
+			
 			
 			//işlemi yavaşlatma**********ÖNEMLİ
 			try {
 				
-				Thread.sleep(1000); //100 ms uyutma/bekletme/geciktirme
+				Thread.sleep(100); //100 ms uyutma/bekletme/geciktirme
 				
 			} catch (Exception e) {
 				// TODO: handle exception
-			}
+				e.printStackTrace();
+			}i = i +  20;
 		}
 		
-		jf.setLayout(new FlowLayout());
-		jf.setVisible(true);
-		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	
 	}
 
 }
