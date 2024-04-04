@@ -14,6 +14,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
+import javax.swing.JScrollBar;
 import javax.swing.JTextArea;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
@@ -39,7 +40,7 @@ public class deneme {
 		String str[] = {"C", "C++", "Java", "PHP"};
 		
 		JComboBox cb1 = new JComboBox(str);
-		
+	
 		
 		//Hangi checkbox ın seçildiğini anlamak
 		JButton btn1 = new JButton("Selected");
@@ -50,8 +51,9 @@ public class deneme {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				
-				String yaz = "Selected programming language "+cb1.getSelectedIndex();
+				String yaz = "Selected programming language "+cb1.getSelectedItem();
 				System.out.println(yaz);
+				
 			}
 		});
 		
