@@ -12,6 +12,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextArea;
 
 public class deneme {
@@ -36,9 +37,15 @@ public class deneme {
 		JLabel lblKelime = new JLabel();
 		JLabel lblMetin = new JLabel();
 		
+		JPasswordField pass = new JPasswordField(20); //20 karakterlik bir password alanı
+		
+		
+		
 		jf.getContentPane().add(ar1);
 		jf.getContentPane().add(lblKelime);
 		jf.getContentPane().add(lblMetin);
+		jf.getContentPane().add(pass);
+
 		
 		btn1.addActionListener(new ActionListener() {
 			
