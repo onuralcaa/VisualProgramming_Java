@@ -16,6 +16,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
+import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
@@ -29,6 +30,18 @@ public class deneme6 {
 		jf.setSize(500, 600);
 		jf.setLocation(100, 200);
 		
+		JPopupMenu pm = new JPopupMenu("Menu");
+		
+		JMenuItem cut = new JMenuItem("Cut");
+		JMenuItem copy = new JMenuItem("Copy");
+		JMenuItem paste = new JMenuItem("Paste");
+		
+		pm.add(cut);
+		pm.add(copy);
+		pm.add(paste);
+		
+
+
 		
 		
 		
