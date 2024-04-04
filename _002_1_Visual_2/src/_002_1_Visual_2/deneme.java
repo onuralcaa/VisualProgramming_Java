@@ -29,7 +29,9 @@ public class deneme {
 		JButton btn1 = new JButton("Send");
 		jf.getContentPane().add(btn1);
 		
+		
 		JTextArea ar1 = new JTextArea();
+		ar1.setText("Buraya yazınız...");
 		
 		JLabel lblKelime = new JLabel();
 		JLabel lblMetin = new JLabel();
