@@ -50,7 +50,7 @@ public class deneme {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				
-				String yaz = "Selected programming language "+cb1.getSelectedItem();
+				String yaz = "Selected programming language "+cb1.getSelectedIndex();
 				System.out.println(yaz);
 			}
 		});
