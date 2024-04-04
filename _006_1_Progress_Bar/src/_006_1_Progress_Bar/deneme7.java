@@ -34,7 +34,27 @@ public class deneme7 {
 		JProgressBar pb = new JProgressBar(0, 2000);
 		pb.setBounds(50, 50, 160, 40);
 		
+		pb.setValue(0);
+		pb.setStringPainted(true);
+		
 		jf.add(pb);
+		
+		int i = 0;
+		
+		while(i <= 2000) //bitiş noktasına kadar
+		{
+			pb.setValue(i);
+			i = i +  20;
+			
+			//işlemi yavaşlatma**********ÖNEMLİ
+			try {
+				
+				Thread.sleep(1000); //100 ms uyutma/bekletme/geciktirme
+				
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
 		
 		jf.setLayout(new FlowLayout());
 		jf.setVisible(true);
