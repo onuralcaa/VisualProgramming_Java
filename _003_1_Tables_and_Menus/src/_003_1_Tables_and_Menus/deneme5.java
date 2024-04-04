@@ -48,7 +48,10 @@ public class deneme5 {
 		menu.add(i3);
 		menu.add(i4);
 
+		menu.add(submenu);
+		mb.add(menu);
 		
+		jf.setJMenuBar(mb); //son aşama
 	
 
 		
