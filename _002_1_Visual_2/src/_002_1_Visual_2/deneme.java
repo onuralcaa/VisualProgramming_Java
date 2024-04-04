@@ -14,6 +14,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextArea;
+import javax.swing.JCheckBox;
 
 public class deneme {
 
@@ -24,43 +25,16 @@ public class deneme {
 		
 		jf.setSize(500, 600);
 		jf.setLocation(100, 200);
-		
 		jf.getContentPane().setLayout(new FlowLayout());
-		
-		JButton btn1 = new JButton("Send");
-		jf.getContentPane().add(btn1);
-		
-		
-		JTextArea ar1 = new JTextArea();
-		ar1.setText("Buraya yazınız...");
-		
-		JLabel lblKelime = new JLabel();
-		JLabel lblMetin = new JLabel();
-		
-		JPasswordField pass = new JPasswordField(20); //20 karakterlik bir password alanı
-		
-		
-		
-		jf.getContentPane().add(ar1);
-		jf.getContentPane().add(lblKelime);
-		jf.getContentPane().add(lblMetin);
-		jf.getContentPane().add(pass);
+	
+		JCheckBox cbE = new JCheckBox("Evet");
+		JCheckBox cbH = new JCheckBox("Hayır");
 
+		cbE.setBounds(200, 200, 50, 50);
 		
-		btn1.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				
-				String metin = ar1.getText(); //string metin alma
-				String kelime[] = metin.split("\\s"); //her bir boşlukta bu kelimeleri alıp diziye atma işlemi
-				
-				lblMetin.setText("Karakter sayısı : " +metin.length());
-				lblKelime.setText("Kelime sayısı : "+kelime.length);
-				
-			}
-		});
+		jf.getContentPane().add(cbE); 
+		jf.getContentPane().add(cbH); 
+
 		
 		jf.setVisible(true);
 		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
