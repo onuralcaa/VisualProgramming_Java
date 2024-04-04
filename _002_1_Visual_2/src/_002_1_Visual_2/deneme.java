@@ -29,12 +29,33 @@ public class deneme {
 	
 		JCheckBox cbE = new JCheckBox("Evet");
 		JCheckBox cbH = new JCheckBox("Hayır");
-
-		cbE.setBounds(200, 200, 50, 50);
+		cbE.setBounds(200, 200, 50, 50);//sizing process
+		
+		//Hangi checkbox ın seçildiğini anlamak
+		JButton btn1 = new JButton("Selected");
+		
+		btn1.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+				if(cbE.isSelected())
+				{
+					System.out.println("Yes, selected."); //Konsol kullanma
+				}
+				
+				if(cbH.isSelected())
+				{
+					System.out.println("No, selected.");
+				}
+			}
+		});
+		
 		
 		jf.getContentPane().add(cbE); 
 		jf.getContentPane().add(cbH); 
-
+		jf.getContentPane().add(btn1);
 		
 		jf.setVisible(true);
 		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
