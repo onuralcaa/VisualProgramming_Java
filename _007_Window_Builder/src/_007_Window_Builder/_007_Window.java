@@ -20,6 +20,8 @@ public class _007_Window extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField textEkran;
+	private double answer, number;
+	int operator;
 
 	/**
 	 * Launch the application.
@@ -36,7 +38,27 @@ public class _007_Window extends JFrame {
 			}
 		});
 	}
-	
+	public void calculate()
+	{
+		switch(operator)
+		{
+		case 1: //Toplama
+			answer = number + Double.parseDouble(textEkran.getText());
+			textEkran.setText(Double.toString(answer)); //ustteki islemin tersi
+			break;
+			
+		case 2: //Cıkarma
+			answer = number - Double.parseDouble(textEkran.getText());
+			textEkran.setText(Double.toString(answer)); //ustteki islemin tersi
+			break;
+			
+		case 3:
+			answer = number * Double.parseDouble(textEkran.getText());
+			textEkran.setText(Double.toString(answer)); //ustteki islemin tersi
+			break;
+		}
+	}
+
 	
 	public void addInput(String str)
 	{
@@ -102,7 +124,11 @@ public class _007_Window extends JFrame {
 		JButton btnTopla = new JButton("+");
 		btnTopla.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				addInput(e.getActionCommand()); //butonun degerini alma
+				number = Double.parseDouble(textEkran.getText());
+				operator = 1;
+				textEkran.setText("");//CLEAR
+				lblSonuc.setText(number + e.getActionCommand());
+				
 			}
 		});
 		btnTopla.setFont(new Font("Tahoma", Font.PLAIN, 32));
@@ -174,7 +200,6 @@ public class _007_Window extends JFrame {
 		JButton btnBol = new JButton("/");
 		btnBol.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				addInput(e.getActionCommand()); //butonun degerini alma
 			}
 		});
 		btnBol.setFont(new Font("Tahoma", Font.PLAIN, 32));
@@ -201,7 +226,8 @@ public class _007_Window extends JFrame {
 		JButton btnSonuc = new JButton("=");
 		btnSonuc.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				addInput(e.getActionCommand()); //butonun degerini alma
+				calculate();
+				lblSonuc.setText("");;
 			}
 		});
 		btnSonuc.setFont(new Font("Tahoma", Font.PLAIN, 32));
@@ -210,7 +236,7 @@ public class _007_Window extends JFrame {
 		JButton btnCarp = new JButton("X");
 		btnCarp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				addInput(e.getActionCommand()); //butonun degerini alma
+				
 			}
 		});
 		btnCarp.setFont(new Font("Tahoma", Font.PLAIN, 32));
