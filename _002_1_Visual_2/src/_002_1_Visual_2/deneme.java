@@ -1,6 +1,5 @@
 package _002_1_Visual_2;
 
-import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
