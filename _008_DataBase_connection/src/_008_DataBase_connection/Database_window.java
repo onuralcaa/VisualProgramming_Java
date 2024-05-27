@@ -12,6 +12,7 @@ import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
@@ -46,6 +47,7 @@ public class Database_window extends JFrame {
 	}
 
 	
+	//VERITABANI BAGLANMA
 	public static void Baglan()
 	{
 		try {
@@ -61,6 +63,8 @@ public class Database_window extends JFrame {
 		
 	}
 	
+	
+	//KAYIT BULMA
 	public void Bul()
 	{
 		try {
@@ -81,6 +85,8 @@ public class Database_window extends JFrame {
 		}
 	}
 	
+	
+	//BAGLANTI KAPATMA
 	public static void Baglanti_kapat()
 	{
 		try {
@@ -92,6 +98,7 @@ public class Database_window extends JFrame {
 		}
 	}
 	
+	//KAYIT EKLEME
 	public void Ekle()
 	{
 		String  tAd, tMem, tYas;
@@ -102,7 +109,7 @@ public class Database_window extends JFrame {
 		tMem = txtMemleket.getText();
 		tYas = txtYas.getText();
 		
-		String sorgu = "Insert into ogrenci Values('"+tNo+"', '"+tAd+"', '"+tMem+"' ,'"+tYas+"')";
+		String sorgu = "Insert into ogrenci Values('"+tNo+"', '"+tAd+"', '"+tMem+"' ,'"+tYas+"')"; //HATA NOKTASI
 		
 		try {
 			Statement sta = con.createStatement();
@@ -117,8 +124,35 @@ public class Database_window extends JFrame {
 		}
 
 	}
+	
+	//KAYIT SILME
+	public void Sil()
+	{
+		
+		
+		try {
+			String sorgu = "Delete from ogrenci where Ogr_No = "+txtNo.getText();
+			Statement sta;
+			
+			sta = con.createStatement();
+			
+			sta.execute(sorgu);
+			System.out.println("Kayıt başarılı bir şekilde silindi.");
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Kayıt silinemedi." + e.toString());
+
+		}
+		
+		
+
+		
+		
+	}
 
 
+	
 	public Database_window() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -211,6 +245,13 @@ public class Database_window extends JFrame {
 		contentPane.add(btnDuzenle);
 		
 		JButton btnSil = new JButton("SİL");
+		btnSil.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Baglan();
+				Sil();
+				Baglanti_kapat();
+			}
+		});
 		btnSil.setBackground(new Color(255, 0, 0));
 		btnSil.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnSil.setBounds(310, 207, 105, 36);
