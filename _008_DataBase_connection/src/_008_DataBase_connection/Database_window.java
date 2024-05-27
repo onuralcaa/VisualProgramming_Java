@@ -102,7 +102,7 @@ public class Database_window extends JFrame {
 		tMem = txtMemleket.getText();
 		tYas = txtYas.getText();
 		
-		String sorgu = "Insert into ogrenci Values('"+tNo+"', '"+tAd+"' '"+tMem+"' '"+tYas+"'";
+		String sorgu = "Insert into ogrenci Values('"+tNo+"', '"+tAd+"', '"+tMem+"' ,'"+tYas+"')";
 		
 		try {
 			Statement sta = con.createStatement();
@@ -197,8 +197,7 @@ public class Database_window extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Baglan();
 				Bul();
-				Baglanti_kapat();
-				
+				Baglanti_kapat();			
 			}
 		});
 		btnGetir.setFont(new Font("Tahoma", Font.PLAIN, 12));
