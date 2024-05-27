@@ -64,7 +64,7 @@ public class Database_window extends JFrame {
 	}
 	
 	
-	//KAYIT BULMA
+	//KAYIT BULMA---------------------------------------------------------------------------------------
 	public void Bul()
 	{
 		try {
@@ -86,7 +86,7 @@ public class Database_window extends JFrame {
 	}
 	
 	
-	//BAGLANTI KAPATMA
+	//BAGLANTI KAPATMA----------------------------------------------------------------------------------
 	public static void Baglanti_kapat()
 	{
 		try {
@@ -98,7 +98,7 @@ public class Database_window extends JFrame {
 		}
 	}
 	
-	//KAYIT EKLEME
+	//KAYIT EKLEME-----------------------------------------------------------------------------------------
 	public void Ekle()
 	{
 		String  tAd, tMem, tYas;
@@ -125,11 +125,9 @@ public class Database_window extends JFrame {
 
 	}
 	
-	//KAYIT SILME
+	//KAYIT SILME--------------------------------------------------------------------------------
 	public void Sil()
-	{
-		
-		
+	{	
 		try {
 			String sorgu = "Delete from ogrenci where Ogr_No = "+txtNo.getText();
 			Statement sta;
@@ -142,13 +140,25 @@ public class Database_window extends JFrame {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Kayıt silinemedi." + e.toString());
+		}	
+	}
+	
+	//GUNCELLEME-------------------------------------------------------------------------------
+	public void Duzenle()
+	{
+		try {
+			//String sorgu = String.format("Update ogrenci set Ogr_Ad = '%s', Ogr_Memleket = '%s', Ogr_Yas = '%s' where Ogr_Yas =  '%d' ");
+			String sorgu = "Update ogrenci set Ogr_ad = '"+txtAd.getText()+"', Ogr_memleket = '"+txtMemleket.getText()+"', Ogr_yas = '"+txtYas.getText()+"' where Ogr_No = '"+txtNo+"'"; 
+			
+			Statement sta = con.createStatement();
+			sta.execute(sorgu);
+			System.out.println("Kayıt düzenleme işlemi başarılı.");		
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Kayıt düzenleme başarısız.");
 
 		}
-		
-		
-
-		
-		
 	}
 
 
@@ -239,6 +249,13 @@ public class Database_window extends JFrame {
 		contentPane.add(btnGetir);
 		
 		JButton btnDuzenle = new JButton("DÜZENLE");
+		btnDuzenle.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Baglan();
+				Duzenle();
+				Baglanti_kapat();
+			}
+		});
 		btnDuzenle.setBackground(new Color(240, 240, 240));
 		btnDuzenle.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnDuzenle.setBounds(310, 154, 105, 34);
